@@ -23,6 +23,8 @@ namespace ScheduleModifierV2WPF
         public MainWindow()
         {
             InitializeComponent();
+            DocHandler doc = new DocHandler();
+            MessageBox.Show(doc.runPythonToGetData());
         }
     }
 }
