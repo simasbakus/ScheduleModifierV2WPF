@@ -34,13 +34,13 @@ namespace ScheduleModifierV2WPF
             }
             if (errors == "")
             {
-                List<List<string>> y = new List<List<string>>();
-                foreach (var item in results.Split(']').ToList())
+                List<List<string>> employees = new List<List<string>>();
+                foreach (var item in results.Split('?').ToList())
                 {
-                    List<string> x = item.Split(',').ToList();
-                    y.Add(x);
+                    List<string> schedule = item.Split('/').ToList();
+                    employees.Add(schedule);
                 }
-                return y[0][3];
+                return employees[5][0];
             }
             else
             {
