@@ -10,6 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -22,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <ComboBox x:Name="EmployeesComboBox"  Grid.Column="1" 
-                  Grid.Row="1" Margin="20" SelectedIndex="0" 
+                  Grid.Row="1" Margin="0, 20" SelectedIndex="0" 
                   SelectionChanged="EmployeesComboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -30,7 +32,21 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        
         <DataGrid x:Name="ScheduleDataGrid" Grid.Column="1" 
-                  Grid.Row="2" Margin="20"/>
+                  Grid.ColumnSpan="3" Grid.Row="2" Margin="0, 20" 
+                  CanUserReorderColumns="False" CanUserResizeColumns="False" 
+                  CanUserSortColumns="False" MinColumnWidth="30">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Pirmadienis" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Antradienis" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Treciadienis" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Ketvirtadienis" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Penktadienis" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Sestadienis" IsReadOnly="True"/>
+                <DataGridTextColumn  Header="Sekmadienis" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

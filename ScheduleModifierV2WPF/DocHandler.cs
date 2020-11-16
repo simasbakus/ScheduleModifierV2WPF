@@ -10,10 +10,9 @@ namespace ScheduleModifierV2WPF
     {
         public List<Employee> RunPythonToGetData()
         {
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\users\simas\appdata\local\programs\python\python39\python.exe";
+            ProcessStartInfo psi = new ProcessStartInfo() { FileName = @"C:\users\simas\appdata\local\programs\python\python39\python.exe" };
 
-            var script = @"C:\Users\simas\OneDrive\Documents\Programavimas\WordHandlerPy\DocHandler.py";
+            string script = @"C:\Users\simas\OneDrive\Documents\Programavimas\WordHandlerPy\DocHandler.py";
 
             psi.Arguments = $"\"{script}\"";
 
@@ -21,15 +20,15 @@ namespace ScheduleModifierV2WPF
             psi.CreateNoWindow = true;
             psi.RedirectStandardOutput = true;
 
-            var results = "";
+            string results = "";
 
-            using(var process = Process.Start(psi))
+            using(Process process = Process.Start(psi))
             {
                 results = process.StandardOutput.ReadToEnd();
             }
             
             List<Employee> employees = new List<Employee>();
-            foreach (var item in results.Split('?').ToList())
+            foreach (string item in results.Split('?').ToList())
             {
                 List<string> schedule = item.Split('/').ToList();
                 Employee employee = new Employee(schedule[0], schedule.GetRange(1, schedule.Count - 1));
