@@ -38,13 +38,13 @@
                   CanUserReorderColumns="False" CanUserResizeColumns="False" 
                   CanUserSortColumns="False" MinColumnWidth="30">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Pirmadienis" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Antradienis" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Treciadienis" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Ketvirtadienis" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Penktadienis" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Sestadienis" IsReadOnly="True"/>
-                <DataGridTextColumn  Header="Sekmadienis" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Monday" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Tuesday" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Wednesday" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Thursday" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Friday" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Saturday" IsReadOnly="True"/>
+                <DataGridTextColumn  Header="Sunday" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 
