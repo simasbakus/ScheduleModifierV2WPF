@@ -20,18 +20,18 @@ namespace ScheduleModifierV2WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly DocHandler doc = new DocHandler();
-        readonly List<Employee> data = new List<Employee>();
+        readonly DataParser DP = new DataParser();
+        readonly List<Employee> Data = new List<Employee>();
         public MainWindow()
         {
             InitializeComponent();
-            data = doc.RunPythonToGetData();
-            EmployeesComboBox.ItemsSource = data;
+            Data = DP.ParseDataToList();
+            EmployeesComboBox.ItemsSource = Data;
         }
 
         private void EmployeesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(data[EmployeesComboBox.SelectedIndex].Name);
+            MessageBox.Show(Data[EmployeesComboBox.SelectedIndex].Name);
         }
     }
 }
