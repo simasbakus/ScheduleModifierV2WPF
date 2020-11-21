@@ -32,21 +32,13 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        
+
         <DataGrid x:Name="ScheduleDataGrid" Grid.Column="1" 
                   Grid.ColumnSpan="3" Grid.Row="2" Margin="0, 20" 
                   CanUserReorderColumns="False" CanUserResizeColumns="False" 
-                  CanUserSortColumns="False" MinColumnWidth="30">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Monday" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Tuesday" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Wednesday" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Thursday" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Friday" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Saturday" IsReadOnly="True"/>
-                <DataGridTextColumn  Header="Sunday" IsReadOnly="True"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                  CanUserSortColumns="False" MinColumnWidth="30" 
+                  AutoGenerateColumns="True" CanUserAddRows="False">
+        </DataGrid> 
 
     </Grid>
 </Window>

@@ -31,7 +31,7 @@ namespace ScheduleModifierV2WPF
 
         private void EmployeesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(Data[EmployeesComboBox.SelectedIndex].Name);
+            ScheduleDataGrid.ItemsSource = Data[EmployeesComboBox.SelectedIndex].Schedule;
         }
     }
 }

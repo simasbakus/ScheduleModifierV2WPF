@@ -14,15 +14,15 @@ namespace ScheduleModifierV2WPF
         public string Saturday { get; set; }
         public string Sunday { get; set; }
 
-        public Week(List<string> weekdays)
+        public Week(List<string> schedule)
         {
-            this.Monday = weekdays[0];
-            this.Tuesday = weekdays[1];
-            this.Wednesday = weekdays[2];
-            this.Thursday = weekdays[3];
-            this.Friday = weekdays[4];
-            this.Saturday = weekdays[5];
-            this.Sunday = weekdays[6];
+            this.Monday = schedule[0];
+            this.Tuesday = schedule[1];
+            this.Wednesday = schedule[2];
+            this.Thursday = schedule[3];
+            this.Friday = schedule[4];
+            this.Saturday = schedule[5];
+            this.Sunday = schedule[6];
         }
     }
 }

@@ -13,11 +13,6 @@ namespace ScheduleModifierV2WPF
 
         public DataParser()
         {
-            SepDateFromData();
-        }
-
-        private void SepDateFromData()
-        {
             string[] text = doc.RunPythonToGetData().Split('%');
             this.Date = text[0];
             this.Data = text[1];
@@ -29,7 +24,7 @@ namespace ScheduleModifierV2WPF
             foreach (string item in this.Data.Split('?').ToList())
             {
                 List<string> schedule = item.Split('/').ToList();
-                Employee employee = new Employee(schedule[0], schedule.GetRange(1, schedule.Count - 1));
+                Employee employee = new Employee(schedule[0], schedule.GetRange(1, schedule.Count - 1), getFirstWeekday());
                 employees.Add(employee);
             }
 
